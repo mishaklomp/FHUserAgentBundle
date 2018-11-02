@@ -1,0 +1,8 @@
+FH\Bundle\UserAgentBundle\Entity\Embedded\Action:
+    type: embeddable
+
+    fields:
+        value:
+            column:     action
+            type:       string
+            length:     20

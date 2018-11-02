@@ -1,0 +1,13 @@
+FH\Bundle\UserAgentBundle\Entity\UserAgent:
+    type: entity
+    table: fh_user_agent
+
+    id:
+        version:
+            type:           string
+            length:         50
+
+    embedded:
+        action:
+            class:          FH\Bundle\UserAgentBundle\Entity\Embedded\Action
+            columnPrefix:   false
