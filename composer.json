@@ -1,0 +1,37 @@
+{
+    "name": "freshheads/user-agent-bundle",
+    "type": "symfony-bundle",
+    "description": "This bundle provides functionality to administer User-Agents / Clients for your application",
+    "keywords": [
+        "User-Agent",
+        "client",
+        "api client",
+        "version control"
+    ],
+    "homepage": "https://github.com/freshheads/FHUserAgentBundle",
+    "authors": [
+        {
+            "name": "Evert Harmeling",
+            "email": "evert@freshheads.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+    },
+    "autoload": {
+        "psr-4": { "FH\\Bundle\\UserAgentBundle\\": "" }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FH\\Bundle\\UserAgentBundle\\\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "1.x-dev"
+        }
+    }
+}
