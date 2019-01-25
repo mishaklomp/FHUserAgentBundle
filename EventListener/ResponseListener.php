@@ -47,6 +47,11 @@ final class ResponseListener
         }
     }
 
+    public function onKernelResponse(FilterResponseEvent $event): void
+    {
+        $this->__invoke($event);
+    }
+
     private function hasCriteria(string $value): bool
     {
         return isset($this->criteria[$value]);
