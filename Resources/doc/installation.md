@@ -24,10 +24,10 @@ composer require freshheads/user-agent-bundle
 Add the bundle and its dependencies (if not already present) to AppKernel.php:
 
 ``` php
-// in AppKernel::registerBundles() - Symfony ^3.3
+// in AppKernel::registerBundles() - Symfony ^3.4
 $bundles = array(
     // ...
-    new FH\Bundle\RestBundle\FHRestBundle(),
+    new FH\Bundle\UserAgentBundle\FHUserAgentBundle(),
     // ...
 );
 
