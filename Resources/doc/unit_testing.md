@@ -9,5 +9,5 @@ composer install
  	 
 Run the test suite via:
 ``` bash
-vendor/phpunit/phpunit/phpunit
+vendor/bin/simple-phpunit -c .
 ```
