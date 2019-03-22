@@ -1,6 +1,7 @@
 {
     "name": "freshheads/user-agent-bundle",
     "type": "symfony-bundle",
+    "license": "MIT",
     "description": "This bundle provides functionality to administer User-Agents / Clients for your application",
     "keywords": [
         "User-Agent",
