@@ -12,7 +12,11 @@
     "authors": [
         {
             "name": "Evert Harmeling",
-            "email": "evert@freshheads.com"
+            "email": "evert.harmeling@freshheads.com"
+        },
+        {
+            "name": "Joris van de Sande",
+            "email": "joris.van.de.sande@freshheads.com"
         }
     ],
     "require": {
@@ -25,15 +29,14 @@
         "symfony/yaml": "^3.4 | ^4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.3",
-        "symfony/var-dumper": "^3.4 | ^4.0"
+        "symfony/phpunit-bridge": "^4.2"
     },
     "autoload": {
         "psr-4": { "FH\\Bundle\\UserAgentBundle\\": "" }
     },
     "autoload-dev": {
         "psr-4": {
-            "FH\\Bundle\\UserAgentBundle\\\\Tests\\": "tests"
+            "FH\\Bundle\\UserAgentBundle\\Tests\\": "tests"
         }
     },
     "config": {
