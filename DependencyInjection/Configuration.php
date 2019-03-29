@@ -13,10 +13,18 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 final class Configuration implements ConfigurationInterface
 {
+    private const ROOT_NAME = 'fh_user_agent';
+
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('fh_user_agent');
-        $rootNode = $treeBuilder->getRootNode();
+        $treeBuilder = new TreeBuilder(self::ROOT_NAME);
+
+        if (method_exists($treeBuilder, 'getRootNode')) {
+            $rootNode = $treeBuilder->getRootNode();
+        } else {
+            // BC layer for symfony/config 4.1 and older
+            $rootNode = $treeBuilder->root(self::ROOT_NAME);
+        }
 
         $rootNode
             ->children()
