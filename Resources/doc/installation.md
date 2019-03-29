@@ -1,19 +1,7 @@
 Installation
 ============
 
-FHUserAgentBundle can be installed using Composer. Add the following repository to composer.json:
-
-``` yaml
-// composer.json
-{
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:freshheads/FHUserAgentBundle.git"
-        }
-    ]
-}
-```
+FHUserAgentBundle can be installed using Composer.
 
 Run Composer to install all required dependencies:
 
