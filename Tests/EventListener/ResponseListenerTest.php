@@ -29,7 +29,14 @@ final class ResponseListenerTest extends TestCase
 {
     private const HOST = 'api.host.tld';
 
+    /**
+     * @var EventDispatcher
+     */
     private $dispatcher;
+
+    /**
+     * @var HttpKernelInterface
+     */
     private $kernel;
 
     protected function setUp(): void
@@ -110,7 +117,7 @@ final class ResponseListenerTest extends TestCase
 
         return new ResponseListener(
             $userAgentRepository,
-[
+            [
                 ResponseListener::CRITERIA_HOST => self::HOST
             ]
         );

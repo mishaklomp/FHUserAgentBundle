@@ -37,11 +37,6 @@
     "autoload": {
         "psr-4": { "FH\\Bundle\\UserAgentBundle\\": "" }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "FH\\Bundle\\UserAgentBundle\\Tests\\": "tests"
-        }
-    },
     "config": {
         "sort-packages": true
     },

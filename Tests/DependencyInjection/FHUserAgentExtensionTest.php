@@ -16,7 +16,14 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 final class FHUserAgentExtensionTest extends TestCase
 {
+    /**
+     * @var ContainerBuilder
+     */
     private $container;
+
+    /**
+     * @var FHUserAgentExtension
+     */
     private $extension;
 
     public function setUp()
