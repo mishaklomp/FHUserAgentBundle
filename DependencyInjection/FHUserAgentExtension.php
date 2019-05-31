@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace FH\Bundle\UserAgentBundle\DependencyInjection;
 
-use FH\Bundle\UserAgentBundle\EventListener\ResponseListener;
 use FH\Bundle\UserAgentBundle\Repository\UserAgentRepositoryInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
