@@ -129,7 +129,7 @@ final class ResponseListenerTest extends TestCase
     private function addListenerAndDispatch(ResponseListener $listener, FilterResponseEvent $event): FilterResponseEvent
     {
         $this->dispatcher->addListener(KernelEvents::RESPONSE, [$listener, '__invoke']);
-        $this->dispatcher->dispatch($event, KernelEvents::RESPONSE);
+        $this->dispatcher->dispatch(KernelEvents::RESPONSE, $event);
         
         return $event;
     }
