@@ -8,12 +8,13 @@ use FH\Bundle\UserAgentBundle\EventListener\ResponseListener;
 use FH\Bundle\UserAgentBundle\Repository\UserAgentRepository;
 use FH\Bundle\UserAgentBundle\Repository\UserAgentRepositoryInterface;
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * @author Evert Harmeling <evert@freshheads.com>
  */
-final class FHUserAgentExtensionTest extends \PHPUnit\Framework\TestCase
+final class FHUserAgentExtensionTest extends TestCase
 {
     private $container;
     private $extension;
@@ -29,7 +30,7 @@ final class FHUserAgentExtensionTest extends \PHPUnit\Framework\TestCase
         unset($this->container, $this->extension);
     }
 
-    public function testExtensionLoadedDefaults()
+    public function testExtensionLoadedDefaults(): void
     {
         $this->extension->load([], $this->container);
 

@@ -7,9 +7,12 @@ use FH\Bundle\UserAgentBundle\Entity\Embedded\Action;
 use FH\Bundle\UserAgentBundle\Entity\UserAgent;
 use FH\Bundle\UserAgentBundle\EventListener\ResponseListener;
 use FH\Bundle\UserAgentBundle\Repository\UserAgentRepository;
+use FH\Bundle\UserAgentBundle\Repository\UserAgentRepositoryInterface;
 use FH\Bundle\UserAgentBundle\Request\Request as UserAgentRequest;
 use FH\Bundle\UserAgentBundle\Response\Response as UserAgentResponse;
 use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,9 +25,9 @@ use function is_string;
 /**
  * @author Evert Harmeling <evert@freshheads.com>
  */
-final class ResponseListenerTest extends \PHPUnit\Framework\TestCase
+final class ResponseListenerTest extends TestCase
 {
-    private const HOST  = 'api.host.tld';
+    private const HOST = 'api.host.tld';
 
     private $dispatcher;
     private $kernel;
@@ -72,9 +75,9 @@ final class ResponseListenerTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return \PHPUnit_Framework_MockObject_MockObject|AppVersionRepository
+     * @return MockObject|UserAgentRepositoryInterface
      */
-    private function mockUserAgentRepository(string $version = null, string $actionValue = null): \PHPUnit_Framework_MockObject_MockObject
+    private function mockUserAgentRepository(string $version = null, string $actionValue = null): MockObject
     {
         $userAgentRepository = $this->createMock(UserAgentRepository::class);
 
