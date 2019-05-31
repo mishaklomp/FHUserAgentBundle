@@ -8,6 +8,7 @@ use FH\Bundle\UserAgentBundle\Repository\UserAgentRepositoryInterface;
 use FH\Bundle\UserAgentBundle\Request\Request;
 use FH\Bundle\UserAgentBundle\Response\Response;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 use function is_a;
 use function sprintf;
@@ -30,15 +31,23 @@ final class ResponseListener
 
     public function __invoke(FilterResponseEvent $event): void
     {
+        if (HttpKernelInterface::MASTER_REQUEST !== $event->getRequestType()) {
+            return;
+        }
+
         if ($this->hasCriteria(self::CRITERIA_HOST)) {
             if ($event->getRequest()->getHost() !== $this->getCriteria(self::CRITERIA_HOST)) {
                 return;
             }
         }
 
-        $userAgent = $this->userAgentRepository->find(
-            $event->getRequest()->headers->get(Request::HEADER_USER_AGENT)
-        );
+        $userAgentHeader = $event->getRequest()->headers->get(Request::HEADER_USER_AGENT);
+
+        if (!is_string($userAgentHeader)) {
+            return;
+        }
+
+        $userAgent = $this->userAgentRepository->find($userAgentHeader);
 
         if (is_a($userAgent, UserAgent::class)) {
             $event->getResponse()->headers->set(

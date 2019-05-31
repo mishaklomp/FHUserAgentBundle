@@ -30,6 +30,7 @@ final class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('repository')
                     ->defaultValue(UserAgentRepository::class)
+                    ->cannotBeEmpty()
                 ->end()
                 ->arrayNode('response_listener')
                     ->addDefaultsIfNotSet()

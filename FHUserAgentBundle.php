@@ -8,6 +8,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  * @author Evert Harmeling <evert@freshheads.com>
  */
-class FHUserAgentBundle extends Bundle
+final class FHUserAgentBundle extends Bundle
 {
 }
