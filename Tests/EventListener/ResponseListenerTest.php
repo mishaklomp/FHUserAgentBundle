@@ -27,7 +27,7 @@ use function is_string;
  */
 final class ResponseListenerTest extends TestCase
 {
-    private const HOST  = 'api.host.tld';
+    private const HOST = 'api.host.tld';
 
     private $dispatcher;
     private $kernel;
