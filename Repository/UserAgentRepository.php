@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace FH\Bundle\UserAgentBundle\Repository;
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use FH\Bundle\UserAgentBundle\Entity\UserAgent;
 
 /**
@@ -13,7 +13,7 @@ class UserAgentRepository implements UserAgentRepositoryInterface
 {
     private $entityManager;
 
-    public function __construct(EntityManager $entityManager)
+    public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }
